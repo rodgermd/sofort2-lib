@@ -1,4 +1,7 @@
 <?php
+
+namespace Sofort;
+
 /**
  * Abstract Data Handler
  * Handles the SofortLibs data-input and output. For the moment we only

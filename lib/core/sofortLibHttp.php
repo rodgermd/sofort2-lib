@@ -1,4 +1,7 @@
 <?php
+
+namespace Sofort;
+
 /**
  * Encapsulates communication via HTTP
  *

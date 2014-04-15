@@ -1,5 +1,6 @@
 <?php
-require_once(dirname(__FILE__).'/sofortLibAbstract.inc.php');
+
+namespace Sofort;
 
 /**
  * Abstract Multipay Class, provides attributes and methods for Invoice and SofortUeberweisung

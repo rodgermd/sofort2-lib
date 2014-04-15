@@ -1,6 +1,6 @@
 <?php
-require_once('xmlToArrayException.php');
-require_once('xmlToArrayNode.php');
+
+namespace Sofort\Lib;
 
 /**
  * XML To Array conversion

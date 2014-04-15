@@ -1,5 +1,6 @@
 <?php
-require_once(dirname(__FILE__).'/sofortLibAbstract.inc.php');
+
+namespace Sofort;
 
 /**
  * This class is  for retrieving information about transactions,

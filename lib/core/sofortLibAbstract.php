@@ -1,4 +1,7 @@
 <?php
+
+namespace Sofort;
+
 /**
  * @mainpage
  * Base class for SOFORT XML-Api
@@ -19,7 +22,7 @@
  * @link http://www.sofort.com/
  *
  */
-require_once(dirname(__FILE__).'/sofortLibFactory.php');
+
 
 define('SOFORTLIB_VERSION', '2.0');
 

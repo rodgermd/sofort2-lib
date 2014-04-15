@@ -1,5 +1,6 @@
 <?php
-require_once(dirname(__FILE__).'/sofortLibHttp.inc.php');
+
+namespace Sofort;
 
 /**
  * Copyright (c) 2013 SOFORT AG

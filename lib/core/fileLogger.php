@@ -1,5 +1,6 @@
 <?php
-require_once(dirname(__FILE__).'/abstractLoggerHandler.php');
+
+namespace Sofort;
 
 /**
  * A basic implementation of logging mechanism intended for debugging

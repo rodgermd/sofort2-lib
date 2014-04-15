@@ -1,4 +1,7 @@
 <?php
+
+namespace Sofort;
+
 /**
  * Abstract Logger Handler
  *

@@ -1,5 +1,6 @@
 <?php
-require_once(dirname(__FILE__).'/lib/xmlToArray.php');
+
+namespace Sofort;
 
 /**
  * This class handels incoming notifications for sofortueberweisung and invoice

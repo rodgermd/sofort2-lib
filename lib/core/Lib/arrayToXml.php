@@ -1,9 +1,6 @@
 <?php
-require_once(dirname(__FILE__).'/arrayToXmlException.php');
-require_once(dirname(__FILE__).'/xmlToArrayNode.php');
-require_once(dirname(__FILE__).'/elements/sofortElement.php');
-require_once(dirname(__FILE__).'/elements/sofortTag.php');
-require_once(dirname(__FILE__).'/elements/sofortText.php');
+
+namespace Sofort\Lib;
 
 /**
  * Array To XML conversion

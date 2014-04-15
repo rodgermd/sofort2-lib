@@ -1,4 +1,7 @@
 <?php
+
+namespace Sofort\Lib;
+
 /**
  * XML To Array Node
  *
