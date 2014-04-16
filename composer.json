@@ -12,9 +12,9 @@
   ],
   "autoload":{
     "psr-0":{
-      "Sofort":"lib/"
+      "Sofort":""
     }
   },
-  "target-dir":"Rodgermd/sofort2-lib"
+  "target-dir":""
 }
 
