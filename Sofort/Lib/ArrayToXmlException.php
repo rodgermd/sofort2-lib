@@ -16,5 +16,3 @@ namespace Sofort\Lib;
  * @link http://www.sofort.com/
  */
 class ArrayToXmlException extends \Exception {}
-
-?>

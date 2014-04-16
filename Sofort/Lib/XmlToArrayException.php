@@ -17,4 +17,3 @@ namespace Sofort\Lib;
  *
  */
 class XmlToArrayException extends \Exception {}
-?>

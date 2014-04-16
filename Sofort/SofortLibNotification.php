@@ -15,73 +15,74 @@ namespace Sofort;
  * @author SOFORT AG http://www.sofort.com (integration@sofort.com)
  * @link http://www.sofort.com/
  */
-class SofortLibNotification {
-	
-	/**
-	 * Array for the errors that occured
-	 * @var array
-	 */
-	public $errors = array();
-	
-	/**
-	 * Containter for the returned transaction id
-	 * @var String
-	 */
-	private $_transactionId = '';
-	
-	/**
-	 * Container for the returned timestamp
-	 * @var Datetime
-	 */
-	private $_time;
-	
-	
-	/**
-	 * Reads the input and tries to read the transaction id
-	 *
-	 * @param string $content XML-File Content
-	 * @return boolean|string (transaction ID, when true)
-	 */
-	public function getNotification($content) {
-		try {
-			$response = XmlToArray::render($content);
-		} catch (Exception $e) {
-			$this->errors['error']['message'] = 'could not parse message';
-			return false;
-		}
-		
-		if (!isset($response['status_notification'])) {
-			return false;
-		}
-		
-		if (isset($response['status_notification']['transaction']['@data'])) {
-			$this->_transactionId = $response['status_notification']['transaction']['@data'];
-			
-			if ($response['status_notification']['time']['@data']) {
-				$this->_time = $response['status_notification']['time']['@data'];
-			}
-			
-			return $this->_transactionId;
-		} else {
-			return false;
-		}
-	}
-	
-	
-	/**
-	 * Getter for variable time
-	 * @return string
-	 */
-	public function getTime() {
-		return $this->_time;
-	}
-	
-	
-	/**
-	 * Getter for transaction
-	 * @return string
-	 */
-	public function getTransactionId() {
-		return $this->_transactionId;
-	}
+class SofortLibNotification
+{
+    /**
+     * Array for the errors that occured
+     * @var array
+     */
+    public $errors = array();
+
+    /**
+     * Containter for the returned transaction id
+     * @var String
+     */
+    private $_transactionId = '';
+
+    /**
+     * Container for the returned timestamp
+     * @var Datetime
+     */
+    private $_time;
+
+    /**
+     * Reads the input and tries to read the transaction id
+     *
+     * @param  string         $content XML-File Content
+     * @return boolean|string (transaction ID, when true)
+     */
+    public function getNotification($content)
+    {
+        try {
+            $response = XmlToArray::render($content);
+        } catch (Exception $e) {
+            $this->errors['error']['message'] = 'could not parse message';
+
+            return false;
+        }
+
+        if (!isset($response['status_notification'])) {
+            return false;
+        }
+
+        if (isset($response['status_notification']['transaction']['@data'])) {
+            $this->_transactionId = $response['status_notification']['transaction']['@data'];
+
+            if ($response['status_notification']['time']['@data']) {
+                $this->_time = $response['status_notification']['time']['@data'];
+            }
+
+            return $this->_transactionId;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Getter for variable time
+     * @return string
+     */
+    public function getTime()
+    {
+        return $this->_time;
+    }
+
+    /**
+     * Getter for transaction
+     * @return string
+     */
+    public function getTransactionId()
+    {
+        return $this->_transactionId;
+    }
 }

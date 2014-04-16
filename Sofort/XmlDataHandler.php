@@ -18,46 +18,47 @@ use Sofort\Lib\XmlToArray;
  * @author SOFORT AG http://www.sofort.com (integration@sofort.com)
  * @link http://www.sofort.com/
  */
-class XmlDataHandler extends AbstractDataHandler {
-	
-	/**
-	 * Should be moved to somewhere else (where it fits better)
-	 * @return void
-	 */
-	public function __construct($configKey) {
-		parent::__construct($configKey);
-	}
-	
-	
-	/**
-	 * Preparing data and parsing result received
-	 * @param array $data
-	 * @return void
-	 */
-	public function handle($data) {
-		$this->_request = ArrayToXml::render($data);
-		$this->_rawRequest = $this->_request;
-		$xmlResponse = self::sendMessage($this->_request);
-		
- 		if (!in_array($this->getConnection()->getHttpStatusCode(), array('200', '301', '302'))) {
-			$this->_response = array('errors' => array('error' => array('code' => array('@data' => $this->getConnection()->getHttpStatusCode()), 'message' => array('@data' => $this->getConnection()->error))));
- 		} else {
-			try {
-				$this->_response = XmlToArray::render($xmlResponse);
-			} catch (\Exception $e) {
-				$this->_response = array('errors' => array('error' => array('code' => array('@data' => '0999'), 'message' => array('@data' => $e->getMessage()))));
-			}
- 		}
-		$this->_rawResponse = $xmlResponse;
- 	}
-	
-	
-	/**
-	 * Sending Data to connection and returning results
-	 * @param string $data
-	 * @return string
-	 */
-	public function sendMessage($data) {
-		return $this->getConnection()->post($data);
-	}
+class XmlDataHandler extends AbstractDataHandler
+{
+    /**
+     * Should be moved to somewhere else (where it fits better)
+     * @return void
+     */
+    public function __construct($configKey)
+    {
+        parent::__construct($configKey);
+    }
+
+    /**
+     * Preparing data and parsing result received
+     * @param  array $data
+     * @return void
+     */
+    public function handle($data)
+    {
+        $this->_request = ArrayToXml::render($data);
+        $this->_rawRequest = $this->_request;
+        $xmlResponse = self::sendMessage($this->_request);
+
+        if (!in_array($this->getConnection()->getHttpStatusCode(), array('200', '301', '302'))) {
+            $this->_response = array('errors' => array('error' => array('code' => array('@data' => $this->getConnection()->getHttpStatusCode()), 'message' => array('@data' => $this->getConnection()->error))));
+        } else {
+            try {
+                $this->_response = XmlToArray::render($xmlResponse);
+            } catch (\Exception $e) {
+                $this->_response = array('errors' => array('error' => array('code' => array('@data' => '0999'), 'message' => array('@data' => $e->getMessage()))));
+            }
+        }
+        $this->_rawResponse = $xmlResponse;
+    }
+
+    /**
+     * Sending Data to connection and returning results
+     * @param  string $data
+     * @return string
+     */
+    public function sendMessage($data)
+    {
+        return $this->getConnection()->post($data);
+    }
 }

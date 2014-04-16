@@ -15,12 +15,9 @@ namespace Sofort;
  * @author SOFORT AG http://www.sofort.com (integration@sofort.com)
  * @link http://www.sofort.com/
  */
-abstract class AbstractLoggerHandler {
-	
-	
-	public function __construct() {}
-	
-	
-	abstract function log($message, $log = 'log');
+abstract class AbstractLoggerHandler
+{
+    public function __construct() {}
+
+    abstract public function log($message, $log = 'log');
 }
-?>

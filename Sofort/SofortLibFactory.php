@@ -13,41 +13,41 @@ namespace Sofort;
  * @author SOFORT AG http://www.sofort.com (integration@sofort.com)
  * @link http://www.sofort.com/
  */
-class SofortLibFactory {
-	
-	
-	/**
-	 * Defines the Http Connection to be used
-	 *
-	 * @param string $data
-	 * @param string / false $url
-	 * @param array / false $headers
-	 * @return SofortLibHttpCurl|SofortLibHttpSocket
-	 */
-	static public function getHttpConnection($data, $url = false, $headers = false) {
-		if (function_exists('curl_init')) {
-			return new SofortLibHttpCurl($data, $url, $headers);
-		} else {
-			return new SofortLibHttpSocket($data, $url, $headers);
-		}
-	}
-	
-	
-	/**
-	 * Defines and includes the logger
-	 * @return FileLogger
-	 */
-	static public function getLogger() {
-		return new FileLogger();
-	}
-	
-	
-	/**
-	 * Defines and includes the DataHandler
-	 * @param string $configKey
-	 * @return XmlDataHandler
-	 */
-	static public function getDataHandler($configKey) {
-		return new XmlDataHandler($configKey);
-	}
+class SofortLibFactory
+{
+    /**
+     * Defines the Http Connection to be used
+     *
+     * @param  string                                $data
+     * @param  string / false                        $url
+     * @param  array / false                         $headers
+     * @return SofortLibHttpCurl|SofortLibHttpSocket
+     */
+    public static function getHttpConnection($data, $url = false, $headers = false)
+    {
+        if (function_exists('curl_init')) {
+            return new SofortLibHttpCurl($data, $url, $headers);
+        } else {
+            return new SofortLibHttpSocket($data, $url, $headers);
+        }
+    }
+
+    /**
+     * Defines and includes the logger
+     * @return FileLogger
+     */
+    public static function getLogger()
+    {
+        return new FileLogger();
+    }
+
+    /**
+     * Defines and includes the DataHandler
+     * @param  string         $configKey
+     * @return XmlDataHandler
+     */
+    public static function getDataHandler($configKey)
+    {
+        return new XmlDataHandler($configKey);
+    }
 }
