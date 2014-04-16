@@ -1,7 +1,7 @@
 {
   "name":"rodgermd/sofort2-lib",
   "description":"sofort payment PHP library",
-  "homepage":"https://github.com/rodgermd/IbanApiDebundle",
+  "homepage":"https://github.com/rodgermd/sofort2-lib",
   "type":"library",
   "license":"LGPL3",
   "authors":[
