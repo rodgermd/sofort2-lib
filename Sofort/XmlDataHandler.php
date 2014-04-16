@@ -2,6 +2,9 @@
 
 namespace Sofort;
 
+use Sofort\Lib\ArrayToXml;
+use Sofort\Lib\XmlToArray;
+
 /**
  * Handler for XML Data
  *
@@ -41,7 +44,7 @@ class XmlDataHandler extends AbstractDataHandler {
  		} else {
 			try {
 				$this->_response = XmlToArray::render($xmlResponse);
-			} catch (Exception $e) {
+			} catch (\Exception $e) {
 				$this->_response = array('errors' => array('error' => array('code' => array('@data' => '0999'), 'message' => array('@data' => $e->getMessage()))));
 			}
  		}

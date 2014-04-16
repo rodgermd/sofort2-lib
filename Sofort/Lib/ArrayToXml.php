@@ -2,6 +2,9 @@
 
 namespace Sofort\Lib;
 
+use Sofort\Lib\Elements\SofortTag;
+use Sofort\Lib\Elements\SofortText;
+
 /**
  * Array To XML conversion
  *
