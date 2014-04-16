@@ -1,20 +1,20 @@
 {
-  "name":"rodgermd/sofort2-lib",
-  "description":"sofort payment PHP library",
-  "homepage":"https://github.com/rodgermd/sofort2-lib",
-  "type":"library",
-  "license":"LGPL3",
-  "authors":[
+  "name"       : "rodgermd/sofort2-lib",
+  "description": "sofort payment PHP library",
+  "homepage"   : "https://github.com/rodgermd/sofort2-lib",
+  "type"       : "library",
+  "license"    : "LGPL3",
+  "authors"    : [
     {
-      "name":"Alexander Murashov",
-      "email":"rodger@ladela.com"
+      "name" : "Alexander Murashov",
+      "email": "rodger@ladela.com"
     }
   ],
-  "autoload":{
-    "psr-0":{
-      "Sofort":""
+  "autoload"   : {
+    "psr-0": {
+      "Sofort": ""
     }
   },
-  "target-dir":""
+  "target-dir" : ""
 }
 
