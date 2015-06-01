@@ -2,6 +2,8 @@
 
 namespace Sofort;
 
+use Sofort\Lib\XmlToArray;
+
 /**
  * This class handels incoming notifications for sofortueberweisung and invoice
  *
@@ -31,7 +33,7 @@ class SofortLibNotification
 
     /**
      * Container for the returned timestamp
-     * @var Datetime
+     * @var \DateTime
      */
     private $_time;
 
@@ -45,7 +47,7 @@ class SofortLibNotification
     {
         try {
             $response = XmlToArray::render($content);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $this->errors['error']['message'] = 'could not parse message';
 
             return false;
