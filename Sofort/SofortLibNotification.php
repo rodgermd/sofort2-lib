@@ -33,7 +33,7 @@ class SofortLibNotification
 
     /**
      * Container for the returned timestamp
-     * @var Datetime
+     * @var \DateTime
      */
     private $_time;
 
